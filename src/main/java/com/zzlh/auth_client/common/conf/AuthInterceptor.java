@@ -32,7 +32,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     		for (Cookie cookie : cookies) {
     			if("JSESSIONID".equals(cookie.getName())) {
     				HttpSession session = request.getSession(false);
-    				if(session != null && session.getId() == cookie.getValue()) {
+    				if(session != null && session.getId().equals(cookie.getValue())) {
     					return true;
     				}
     			}

@@ -30,10 +30,10 @@ public class CasController {
 	
     @RequestMapping(path = "/auth",method = RequestMethod.POST)
     public void auth(User user,HttpServletResponse response) throws IOException {
-    	response.sendRedirect("http://localhost:8090/auth/login?"+"service=http://localhost:8070/cas/ticket&username="+user.getUsername()+"&password="+user.getPassword());
+    	response.sendRedirect("http://localhost:8090/auth/login?"+"service=http://localhost:8070&username="+user.getUsername()+"&password="+user.getPassword());
     }
     
-    @RequestMapping(path = "/ticket",method = RequestMethod.POST)
+    @RequestMapping(path = "/ticket",method = RequestMethod.GET)
     public void ticket(@RequestParam String ticket,HttpServletRequest request,HttpServletResponse response) throws Exception {
     	Map<String, String> params = new HashMap<>();
     	params.put("service", "http://localhost:8070");
