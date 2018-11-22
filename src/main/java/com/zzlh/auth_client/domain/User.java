@@ -1,6 +1,7 @@
 package com.zzlh.auth_client.domain;
 
 import lombok.Data;
+import sun.net.spi.nameservice.dns.DNSNameService;
 
 /**
  * @Description 用户实体
@@ -34,4 +35,9 @@ public class User {
 		this.type = type;
 	}
 	
+	public static void main(String[] args) {
+		System.out.println(User.class.getClassLoader());
+		System.out.println(DNSNameService.class.getClassLoader());
+		System.out.println(String.class.getClassLoader());
+	}
 }

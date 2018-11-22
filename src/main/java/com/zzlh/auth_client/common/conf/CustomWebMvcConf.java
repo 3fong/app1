@@ -26,13 +26,13 @@ public class CustomWebMvcConf implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor).
-        excludePathPatterns("/cas/**","/login","/error").addPathPatterns("/**");
+        excludePathPatterns("/auth/**","/loginhtml","/error").addPathPatterns("/**");
     }
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("welcome");
-        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/loginhtml").setViewName("login");
         registry.addViewController("/error").setViewName("error");
     }
     

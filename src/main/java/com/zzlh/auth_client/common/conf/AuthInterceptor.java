@@ -38,7 +38,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     			}
     		}
     	}
-    	response.sendRedirect("login");
+    	response.sendRedirect("/auth/getticket");
     	return false;
     }
     
