@@ -54,7 +54,7 @@
 - 请求响应
 > 返回注销的TGT
 
-- 涉及技术
- - spring boot 
- - thymeleaf
- - spring mvc
+### 涉及技术
+- spring boot 
+- thymeleaf
+- spring mvc
