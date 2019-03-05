@@ -1,0 +1,17 @@
+kind: pipeline
+name: app1
+
+clone:
+  disable: true
+
+steps:
+  - name: clone
+    image: docker:git
+    commands:
+      - git clone https://github.com/liulei3/app1.git
+      - git checkout $DRONE_COMMIT
+
+  - name: build
+    image: maven:3.6.0-jdk-8
+    commands:
+      - mvn clean compile package -DskipTests=true -Dmaven.javadoc.skip=true
